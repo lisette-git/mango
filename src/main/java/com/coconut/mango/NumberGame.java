@@ -10,19 +10,19 @@ public class NumberGame {
         //
         //If you’re ready for a bigger challenge, reverse a decimal number. The decimal point should stay in the same place.
         // So, the number 193.56 should output 653.91.
-        int[] intArray = Integer.toString(n).chars().map(a -> a - '0').toArray();
-//        Collections.reverse(Arrays.asList(intArray));
 
-//        StringBuilder result = new StringBuilder();
-//        Arrays.asList(intArray).stream()
-//                .forEach(i -> result.append(i));
+        int[] intArray = Integer.toString(n).chars().map(a -> a - '0').toArray();
+
         int res = 0;
         for(int i = intArray.length-1;i >= 0 ;i--) {
             res=res*10+intArray[i];
         }
 
-        System.out.println("res: " + res);
+        System.out.println("reversed number: " + res);
+
+
     }
+
 
 
 

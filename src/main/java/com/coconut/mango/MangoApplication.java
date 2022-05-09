@@ -14,7 +14,7 @@ public class MangoApplication {
     public static void main(String[] args) {
         SpringApplication.run(MangoApplication.class, args);
 
-        new NumberGame().primeNumberCheck(19);
+        new NumberGame().numberReversal(1234965);
 
 //        WordGame wordGame = new WordGame();
 //        wordGame.anagram("baby","abbyp");
