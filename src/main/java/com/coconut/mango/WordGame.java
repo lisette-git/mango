@@ -1,11 +1,14 @@
 package com.coconut.mango;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Arrays;
 import java.util.Collections;
 
+@Component
 public class WordGame {
 
-    private void reverseString(String input) {
+    String reverseString(String input) {
         // The input is a string of words, and the output should be the words in reverse but with the letters in the original order.
         // For example, the string “Dog bites man” should output as “man bites Dog.”
 
@@ -22,11 +25,12 @@ public class WordGame {
                 .forEach(i -> result.append(i + " "));
 
         System.out.println(result);
-        return;
+        return result.toString();
+//        return result;
 
     }
 
-    public void anagram(String in1, String in2) {
+    public String anagram(String in1, String in2) {
 // Anagrams
 //Two words are anagrams if they contain the same letters but in a different order.
 
@@ -40,7 +44,7 @@ public class WordGame {
         Arrays.sort(chars2);
         String out2 = new String(chars2);
         boolean bln = out1.equals(out2);
-                System.out.println("anagram: " + String.valueOf(bln));
-        return;
+//                System.out.println("anagram: " + String.valueOf(bln));
+        return String.valueOf(bln);
     }
 }

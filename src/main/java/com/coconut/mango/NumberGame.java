@@ -1,8 +1,13 @@
 package com.coconut.mango;
 
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
+@Component
 public class NumberGame {
     public void numberReversal(int n) {
         //This one is a technical interview favorite. For a given input number, return the number in reverse.
@@ -15,7 +20,7 @@ public class NumberGame {
             res=res*10+intArray[i];
         }
 
-        System.out.println("reversed number: " + res);
+//        System.out.println("reversed number: " + res);
 
 
     }
@@ -37,13 +42,15 @@ public class NumberGame {
 
     }
 
-    public void primeCalculator(int n) {
+    public List primeCalculator(int n) {
         // A prime number calculator that outputs all prime numbers between 2 and the input number.
-        System.out.println("prime numbers: ");
+//        System.out.println("prime numbers: ");
+        List list = new ArrayList();
         for (int i = 2; i <= n; i++) {
             if (primeNumberCheck(i))
-                System.out.println(i);
+                list.add(i);
         }
+        return list;
     }
 
 }
