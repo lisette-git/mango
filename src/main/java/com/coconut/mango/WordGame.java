@@ -1,5 +1,6 @@
 package com.coconut.mango;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -12,10 +13,6 @@ public class WordGame {
         // The input is a string of words, and the output should be the words in reverse but with the letters in the original order.
         // For example, the string “Dog bites man” should output as “man bites Dog.”
 
-        //    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-//    System.out.println("Enter a String");
-//    String userInput = myObj.nextLine();  // Read user input
-//    reverseString(userInput);
 
         String[] aaa = input.split(" ");
         Collections.reverse(Arrays.asList(aaa));
@@ -25,8 +22,8 @@ public class WordGame {
                 .forEach(i -> result.append(i + " "));
 
         System.out.println(result);
-        return result.toString();
-//        return result;
+        return String.valueOf(result);
+
 
     }
 

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path = "/game")
 public class MyRestController {
@@ -23,7 +24,7 @@ public class MyRestController {
         return new ResponseEntity<String>("POST Response", HttpStatus.OK);
     }
 
-    @PostMapping("/string-reversal")
+    @PostMapping("/reversal")
     public @ResponseBody ResponseEntity<String> reverseString(@RequestBody String string) {
         String res = wordGame.reverseString(string);
         return new ResponseEntity<String>(res, HttpStatus.OK);
