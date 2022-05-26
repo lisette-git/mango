@@ -37,9 +37,11 @@ public class MyRestController {
     }
 
     @PostMapping("/prime-number-check")
-    public @ResponseBody ResponseEntity<Boolean> primeCheck(@RequestHeader int in) {
-        boolean res = numbGame.primeNumberCheck(in);
-        return new ResponseEntity<Boolean>(res, HttpStatus.OK);
+    public @ResponseBody ResponseEntity<String> primeCheck(@RequestHeader(value = "in2", required = false)int in2) {
+
+            String res = numbGame.primeNumberCheck(in2);
+            return new ResponseEntity<String>(res, HttpStatus.OK);
+
     }
 
     @PostMapping("/prime-calculator")
