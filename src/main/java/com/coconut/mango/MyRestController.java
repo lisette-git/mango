@@ -30,8 +30,8 @@ public class MyRestController {
         return new ResponseEntity<String>(res, HttpStatus.OK);
     }
 
-    @PostMapping("/string-anagram")
-    public @ResponseBody ResponseEntity<String> anagram(@RequestHeader String in1, @RequestHeader String in2) {
+    @PostMapping("/anagram")
+    public @ResponseBody ResponseEntity<String> anagram(@RequestHeader(value = "in1", required = false)String in1, @RequestHeader(value = "in2", required = false)String in2) {
         String res = wordGame.anagram(in1,in2);
         return new ResponseEntity<String>(res, HttpStatus.OK);
     }
