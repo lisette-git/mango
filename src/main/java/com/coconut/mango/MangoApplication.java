@@ -14,12 +14,7 @@ public class MangoApplication {
     public static void main(String[] args) {
         SpringApplication.run(MangoApplication.class, args);
 
-        new NumberGame().numberReversal(1234965);
-        if(new NumberGame().primeNumberCheck(4).equals("true")) {System.out.println(" is prime");};
-        new NumberGame().primeCalculator(125);
 
-//        WordGame wordGame = new WordGame();
-//        wordGame.anagram("baby","abbyp");
 }
 
 

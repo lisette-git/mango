@@ -21,7 +21,7 @@ public class WordGame {
         Arrays.asList(aaa).stream()
                 .forEach(i -> result.append(i + " "));
 
-        System.out.println(result);
+
         return String.valueOf(result);
 
 
@@ -34,10 +34,10 @@ public class WordGame {
 //As an added challenge, for a given array of strings, return separate lists that group anagrams together.
 
 
-        char[] chars1 = in1.toCharArray();
+        char[] chars1 = in1.toLowerCase().toCharArray();
         Arrays.sort(chars1);
         String out1 = new String(chars1);
-        char[] chars2 = in2.toCharArray();
+        char[] chars2 = in2.toLowerCase().toCharArray();
         Arrays.sort(chars2);
         String out2 = new String(chars2);
         boolean bln = out1.equals(out2);
