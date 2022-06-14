@@ -20,10 +20,16 @@ public class WordGameTest {
 
     @Test
     public void givenString_getAnagramTest() {
-
         String in1 = "Debit card";
         String in2 = "Bad credit";
         String out = word.anagram(in1, in2);
-        Assert.isTrue(Boolean.parseBoolean(out));
+        assertEquals(true,Boolean.parseBoolean(out));
+    }
+    @Test
+    public void givenDiffString_getAnagramTest() {
+        String in1 = "flamingo";
+        String in2 = "flaming";
+        String out = word.anagram(in1, in2);
+        assertEquals(false,Boolean.parseBoolean(out));
     }
 }
