@@ -3,7 +3,9 @@ package com.coconut.mango;
 import java.sql.*;
 
 public class JDBCconnect {
-    public static void main(String[] args) {
+
+    Statement statement;
+    public JDBCconnect() {
         String url = "jdbc:mysql://localhost:3306/mango-db";
         String username="root";
         String password="";
@@ -13,11 +15,12 @@ public class JDBCconnect {
 
             Connection connection = DriverManager.getConnection(url,username,password);
 
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from memory");
+            statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery("select COUNT(*) from memory");
 
-            String insertSQL = "INSERT INTO memory(id,type,in1,in2)" + "VALUES(00002,'reverseString','hello world reverse this!','')";
-            statement.executeUpdate(insertSQL);
+
+//            String insertSQL = "INSERT INTO memory(id,type,in1,in2)" + "VALUES(00002,'reverseString','hello world reverse this!','')";
+//            statement.executeUpdate(insertSQL);
 
 
 //            while (resultSet.next()) {
@@ -26,5 +29,19 @@ public class JDBCconnect {
         } catch (Exception e) {
             System.out.println(e);
         }
+        
     }
+    
+    public void insertInfo(String type, String in1){
+
+        String insertSQL = "INSERT into memory VALUES(1,'"+ type + "','"+ in1 + "','')" ;
+
+        try {
+            statement.executeUpdate(insertSQL);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
 }

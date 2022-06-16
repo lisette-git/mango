@@ -21,6 +21,8 @@ public class WordGame {
         Arrays.asList(aaa).stream()
                 .forEach(i -> result.append(i + " "));
 
+        JDBCconnect connect = new JDBCconnect();
+        connect.insertInfo("reverseString",input);
 
         return String.valueOf(result);
 
