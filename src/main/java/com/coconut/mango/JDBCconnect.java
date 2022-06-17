@@ -1,6 +1,7 @@
 package com.coconut.mango;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class JDBCconnect {
 
@@ -34,7 +35,8 @@ public class JDBCconnect {
     
     public void insertInfo(String type, String in1){
 
-        String insertSQL = "INSERT into memory VALUES(1,'"+ type + "','"+ in1 + "','')" ;
+        String date = LocalDate.now().toString();
+        String insertSQL = "INSERT into memory VALUES('" + date + "','"+ type + "','"+ in1 + "','')" ;
 
         try {
             statement.executeUpdate(insertSQL);
