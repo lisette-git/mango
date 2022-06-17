@@ -17,16 +17,9 @@ public class JDBCconnect {
             Connection connection = DriverManager.getConnection(url,username,password);
 
             statement = connection.createStatement();
-//            ResultSet resultSet = statement.executeQuery("select COUNT(*) from memory");
+//            ResultSet resultSet = statement.executeQuery("select * from memory");
 
 
-//            String insertSQL = "INSERT INTO memory(id,type,in1,in2)" + "VALUES(00002,'reverseString','hello world reverse this!','')";
-//            statement.executeUpdate(insertSQL);
-
-
-//            while (resultSet.next()) {
-//                System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + " " + resultSet.getString(3));
-//            }
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -37,6 +30,18 @@ public class JDBCconnect {
 
         String date = LocalDate.now().toString();
         String insertSQL = "INSERT into memory VALUES('" + date + "','"+ type + "','"+ in1 + "','')" ;
+
+        try {
+            statement.executeUpdate(insertSQL);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+    public void insertInfo(String type, String in1, String in2){
+
+        String date = LocalDate.now().toString();
+        String insertSQL = "INSERT into memory VALUES('" + date + "','"+ type + "','" + in1 + "','" + in2 + "')" ;
 
         try {
             statement.executeUpdate(insertSQL);

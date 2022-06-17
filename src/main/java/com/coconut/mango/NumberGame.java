@@ -20,6 +20,7 @@ public class NumberGame {
                return "false";
            } ;
         }
+
         return "true";
 
     }
@@ -32,6 +33,7 @@ public class NumberGame {
             if (primeNumberCheck(i).equals("true"))
                 list.add(i);
         }
+
         return list;
     }
 

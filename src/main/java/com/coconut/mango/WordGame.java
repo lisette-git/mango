@@ -21,9 +21,6 @@ public class WordGame {
         Arrays.asList(aaa).stream()
                 .forEach(i -> result.append(i + " "));
 
-        JDBCconnect connect = new JDBCconnect();
-        connect.insertInfo("reverseString",input);
-
         return String.valueOf(result);
 
 
@@ -43,7 +40,7 @@ public class WordGame {
         Arrays.sort(chars2);
         String out2 = new String(chars2);
         boolean bln = out1.equals(out2);
-//                System.out.println("anagram: " + String.valueOf(bln));
+
         return String.valueOf(bln);
     }
 }
